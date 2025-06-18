@@ -1,0 +1,95 @@
+'''
+Nome: MATHEUS RAMON PRADO
+Curso: ANÁLISE E DESENVOLVIMENTO DE SISTEMAS
+16/06/2025
+'''
+
+#Criar as listas antes de tudo para que não seja apagada
+estudantes = []
+
+
+while True: #Esse primeiro 'while' é para a operação não ser finalizada
+    #Menu Principal
+    print(f'   Menu Principal ')
+    print(f'1 - ESTUDANTES')
+    print(f'2 - DISCIPLINAS ')
+    print(f'3 - MATRÍCULAS')
+    print(f'4 - TURMAS')
+    print(f'5 - PROFESSORES')
+    print(f'0 - SAIR')
+    print('')
+
+    #Primeira escolha do Usuário
+    opcao1 = int(input(f'Digite o número referente a categoria: '))
+
+    if opcao1 == 1:
+        print(f'Você escolheu a opção: {opcao1}')
+        print('')
+
+        while True: #O segundo é para que não fique apenas no menu principal e continue no Segundo ate que o usuario queira sair
+            # Segundo Menu
+            if opcao1 == 1:
+             print(f'   Menu Operacional: ESTUDANTES ')
+            print(f'1 - ADICIONAR')
+            print(f'2 - LISTAGEM')
+            print(f'3 - ATUALIZAR')
+            print(f'4 - EXCLUIR')
+            print(f'5 - MENU PRINCIPAL')
+            print('')
+
+            # Segunda escolha do usuário
+            try:
+                opcao2 = int(input(f'Digite o número referente a categoria: '))
+
+                # Re-indent the following lines to be inside the try block
+                print('')
+
+
+                if opcao2 == 1:
+                    print(f'Você escolheu uma opção válida: {opcao2}')
+                    print('Para voltar ao Menu Operacional digite: Sair')
+                    nome = input("Digite o nome do estudante: ")
+                    print('')
+                    estudantes.append(nome) #esse append quer dizer que vai adicionar um elemento ao fim da lista, ou seja, o 'append' vai adicionar na lista 'estudantes' o que for digitado na variável 'nome'
+                    print(f"Nome:'{nome}' adicionado!")
+                    print('')
+
+
+                elif opcao2 == 2:
+                    print(f'Você escolheu uma opção válida:{opcao2}')
+                    if not estudantes: #Se não tiver nada na lista aparecerá essa mensagem
+                        print(f'Não há estudantes cadastrados.')
+                        print('')
+                    for nome in estudantes: #Para a variavel 'nome' na lista 'estudantes' aparecera cada elemento
+                        print(f"Nome: {nome}")
+                    input('Pressione enter para voltar.')
+                    print('')
+
+                elif opcao2 >= 2 and opcao2 <= 4:
+                    print(f'Você escolheu a opção:{opcao2}')
+                    print(f'EM DESENVOLVIMENTO..')
+                    print('')
+                # The except block should align with the try block
+            except ValueError:
+                print(f'Opção inválida, tente novamente!')
+                print('')
+
+            # This elif and else block should be outside the try-except block
+            elif opcao2 == 5:
+                break #Esse break serve para parar o loop do segundo menu e assim voltar para o menu principal
+
+            else:
+                print(f'Opção inválida, tente novamente!')
+                print('')
+
+    elif opcao1 >= 2 and opcao1 <= 5:
+        print(f'Você escolheu a opção:{opcao1}')
+        print(f'EM DESENVOLVIMENTO..')
+        print('')
+
+    elif opcao1 == 0:
+        print(f'Saindo..')
+        break #Como esse break esta junto com o menu principal que é a base de tudo, ele encerra todo o processo
+
+    else:
+        print(f'Opcão inválida, tente novamente!')
