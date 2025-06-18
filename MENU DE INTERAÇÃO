@@ -69,16 +69,14 @@ while True: #Esse primeiro 'while' é para a operação não ser finalizada
                     print(f'Você escolheu a opção:{opcao2}')
                     print(f'EM DESENVOLVIMENTO..')
                     print('')
-                # The except block should align with the try block
+                
+                elif opcao2 == 5:
+                     break #Esse break serve para parar o loop do segundo menu e assim voltar para o menu principal
+
+                else:
+                    print(f'Opção inválida, tente novamente!')
+                    print('')
             except ValueError:
-                print(f'Opção inválida, tente novamente!')
-                print('')
-
-            # This elif and else block should be outside the try-except block
-            elif opcao2 == 5:
-                break #Esse break serve para parar o loop do segundo menu e assim voltar para o menu principal
-
-            else:
                 print(f'Opção inválida, tente novamente!')
                 print('')
 
