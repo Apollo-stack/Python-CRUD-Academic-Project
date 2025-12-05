@@ -24,7 +24,7 @@ The application features an interactive menu with the following capabilities:
 
 3. Run the script:
     ```bash
-     python "MENU DE INTERAÇÃO"
+     python "main.py"
 
 -----------------------------------------------------------------------------------    
 
